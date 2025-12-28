@@ -201,5 +201,51 @@ export const SECTOR_DATA = {
       "PRESENTATION": ["Regulatory Change Analysis (GDPR/CCPA)", "Corporate Governance Review", "Intellectual Property Strategy", "Compliance Risk Assessment"],
       "INTERVIEW": ["Conflict of Interest Check", "Case Law Research Methodology", "Drafting Precision", "Regulatory Liaison Experience"]
     }
+  },
+  "DAILY & TRAVEL CONVERSATION": {
+    positions: ["Traveler", "Guest", "Customer", "Passenger", "Client", "Tourist"],
+    tools: ["Face-to-Face", "Phone Call", "Translation App", "Booking Confirmation", "Digital Menu"],
+    subtopics: {
+      "AIRPORT & IMMIGRATION": [
+        "Answering Customs and Immigration Questions",
+        "Reporting Missing or Damaged Luggage",
+        "Inquiring about Flight Delays or Gate Changes",
+        "Requesting a Seat Upgrade at Check-in",
+        "Navigating Security Screening Instructions",
+        "Ordering Duty Free Items and Tax Refunds"
+      ],
+      "HOTEL & ACCOMMODATION": [
+        "Checking In and Confirming Room Features",
+        "Reporting a Maintenance Issue (AC, Wi-Fi, Plumbing)",
+        "Requesting a Late Check-out or Room Upgrade",
+        "Asking for Local Restaurant Recommendations",
+        "Complaining about Noise or Room Cleanliness",
+        "Arranging an Early Morning Wake-up Call"
+      ],
+      "RESTAURANT & BAR": [
+        "Making a Reservation for a Large Group",
+        "Ordering Food with Specific Dietary Restrictions",
+        "Asking the Sommelier for Wine Recommendations",
+        "Sending Back Food that is Under-cooked",
+        "Handling a Mistake on the Final Bill",
+        "Ordering Signature Cocktails at a Busy Bar",
+        "Requesting the Check and Splitting the Bill"
+      ],
+      "REQUESTS & SERVICES": [
+        "Asking for Directions in a Crowded City",
+        "Hailing a Taxi and Negotiating the Fare",
+        "Booking a Guided Tour or Entrance Tickets",
+        "Requesting Help at a Pharmacy or Clinic",
+        "Buying a Local SIM Card and Data Plan",
+        "Asking to Borrow or Charge an Electronic Device"
+      ],
+      "OFFICE & SOCIAL": [
+        "Salary and Compensation Negotiation",
+        "Handling Conflict with a Team Member",
+        "Small Talk about Weekend and Hobbies",
+        "Introducing Yourself to a New Department",
+        "Explaining a Personal Emergency to HR"
+      ]
+    }
   }
 };

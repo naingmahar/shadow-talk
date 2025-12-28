@@ -22,7 +22,7 @@ export default function PracticePage() {
   const { isRecording, audioBlob, startRecording, stopRecording } = useRecorder();
 
   useEffect(() => {
-    const pending = localStorage.getItem('shared_script');
+    const pending = sessionStorage.getItem('shared_script');
     console.log("Pending Script from localStorage:", pending);
     if (pending) {
       setText(pending);

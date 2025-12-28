@@ -19,7 +19,7 @@ export default function TopicsPage() {
   });
 
   //@ts-ignore
-  const currentData = SECTOR_DATA[sector] || SECTOR_DATA["DAILY CONVERSATION & LOGISTICS"];
+  const currentData = SECTOR_DATA[sector] || SECTOR_DATA["DAILY & TRAVEL CONVERSATION"];
 
   const handleSectorChange = (newSector: string) => {
     setSector(newSector);
@@ -239,7 +239,7 @@ export default function TopicsPage() {
                   {generatedScript && (
                     <button 
                       onClick={() => {
-                        localStorage.setItem('pending_script', generatedScript);
+                        sessionStorage.setItem('pending_script', generatedScript);
                         router.push('/practice');
                       }}
                       className="w-full bg-slate-900 text-white py-6 rounded-2xl font-black hover:bg-black transition-all flex items-center justify-center gap-2"
