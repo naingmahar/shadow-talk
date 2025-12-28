@@ -1,12 +1,95 @@
 export const SECTOR_DATA = {
-  "DEVELOPMENT": {
-    positions: ["Frontend Developer", "Backend Developer", "Fullstack Developer", "Mobile Developer (iOS/Android)", "Embedded Systems Engineer", "Game Developer"],
-    tools: ["React Native", "TypeScript", "Node.js", "Next.js", "Python", "Go", "Java", "SQL", "GraphQL", "Rust", "Swift", "Kotlin"],
+  "FRONTEND DEVELOPMENT": {
+    positions: ["Frontend Developer", "React Specialist", "UI Engineer", "Next JS Developer", "Web Performance Expert"],
+    tools: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Zustand", "Playwright", "Lighthouse", "Web Vitals"],
     subtopics: {
-      "INTERVIEW": ["Memory Management & Leaks", "System Architecture Design", "API Rate Limiting & Security", "State Management Patterns", "Asynchronous Programming"],
-      "DAILY STANDUP": ["Current Ticket Status", "Code Refactoring Progress", "API Integration Blockers", "Unit Test Coverage"],
-      "PEER REVIEW": ["Prop-drilling vs Context API", "Error Boundary Implementation", "Database Schema Optimization", "Middleware Logic"],
-      "TECHNICAL PRESENTATION": ["Micro-frontend Strategy", "Serverless Architecture Benefits", "Transitioning to Headless CMS"]
+      "INTERVIEW": [
+        // PERFORMANCE OPTIMIZATION
+        "Core Web Vitals LCP and CLS Optimization",
+        "Tree Shaking and Bundle Size Reduction",
+        "Memoization and Reducing Component Re-renders",
+        "Critical Rendering Path and Asset Prioritization",
+        "Lazy Loading and Code Splitting Strategies",
+        "Web Workers for Off-Main-Thread Processing",
+        // TESTING & QA
+        "End to End Testing with Playwright",
+        "Unit Testing React Hooks with Jest",
+        "Integration Testing for API Workflows",
+        "Visual Regression Testing and Snapshot Logic",
+        "Mocking Service Workers for Network Isolation",
+        "Testing Library Best Practices and Accessibility",
+        // ARCHITECTURE & REQUIREMENTS
+        "Hydration and Server Side Rendering logic",
+        "Micro Frontend Architecture and Composition",
+        "State Management Prop Drilling vs Context API",
+        "Atomic Design Patterns for Scalability",
+        "CORS and Frontend Security Best Practices",
+        "Responsive Design and Fluid Layout Logic"
+      ],
+      "DAILY STANDUP": ["Sprint Status", "Blockers"],
+      "PEER REVIEW": ["Code Quality", "UI Consistency"]
+    }
+  },
+  "BACKEND DEVELOPMENT": {
+    positions: ["Backend Developer", "API Architect", "Database Engineer", "Cloud Engineer", "Distributed Systems Specialist"],
+    tools: ["Node JS", "PostgreSQL", "Redis", "Kafka", "Docker", "Nest JS", "Prometheus", "New Relic"],
+    subtopics: {
+      "INTERVIEW": [
+        // PERFORMANCE OPTIMIZATION
+        "Database Query Execution Plan Analysis",
+        "Connection Pooling and Deadlock Prevention",
+        "Distributed Caching with Redis and TTL Logic",
+        "Load Balancing and Traffic Shaping Strategies",
+        "Horizontal Scaling and Auto-scaling Groups",
+        "Message Queue Latency and Throughput Tuning",
+        // TESTING & QA
+        "Integration Testing for Microservices",
+        "Load and Stress Testing with k6 or JMeter",
+        "Contract Testing for API Reliability",
+        "Chaos Engineering and Fault Injection Logic",
+        "Database Migration Rollback and Safety Testing",
+        "Mocking External Services in CI CD Pipelines",
+        // ARCHITECTURE & REQUIREMENTS
+        "Database Sharding and Indexing Strategy",
+        "REST vs GraphQL vs gRPC Tradeoffs",
+        "ACID vs BASE Transaction Models",
+        "Event Driven Architecture and Pub Sub Patterns",
+        "Zero Trust Security and API Gateway Logic",
+        "Rate Limiting and DDoS Mitigation Patterns"
+      ],
+      "DAILY STANDUP": ["API Status", "Database Health"],
+      "PEER REVIEW": ["Logic Review", "Middleware Audit"]
+    }
+  },
+  "MOBILE DEVELOPMENT": {
+    positions: ["React Native Developer", "iOS Engineer", "Android Developer", "Flutter Developer", "Mobile Architect"],
+    tools: ["React Native", "Swift", "Kotlin", "Firebase", "App Store Connect", "Expo", "Sentry", "Flipper"],
+    subtopics: {
+      "INTERVIEW": [
+        // PERFORMANCE OPTIMIZATION
+        "Memory Management and Tracking Leaks",
+        "Optimizing FlatList and Image Rendering",
+        "Native Thread vs JavaScript Thread Latency",
+        "App Startup Time Cold vs Warm Start",
+        "Battery Consumption and Background Tasks",
+        "Binary Size Reduction and Hermes Engine",
+        // TESTING & QA
+        "Automated UI Testing with Detox or Appium",
+        "Cross Device Compatibility and Simulation",
+        "Beta Testing with TestFlight and Play Console",
+        "Simulating Low Network and Offline Syncing",
+        "Error Monitoring and Crashlytics RCA",
+        "Snapshot Testing for Cross Platform UI",
+        // ARCHITECTURE & REQUIREMENTS
+        "Native Bridge and JSI Communication",
+        "Managing App Permissions and Privacy",
+        "Push Notification Lifecycle and Logic",
+        "Over the Air Updates with CodePush",
+        "Deep Linking and Universal Link Handling",
+        "Biometric Authentication Integration"
+      ],
+      "DAILY STANDUP": ["Build Progress", "Platform Bugs"],
+      "PEER REVIEW": ["Bundle Analysis", "Navigation Audit"]
     }
   },
   "UI/UX DESIGN": {

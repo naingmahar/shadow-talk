@@ -10,7 +10,7 @@ export default function TopicsPage() {
   const [loading, setLoading] = useState(false);
   const [generatedScript, setGeneratedScript] = useState('');
   
-  const [sector, setSector] = useState("DEVELOPMENT");
+  const [sector, setSector] = useState("MOBILE DEVELOPMENT");
   const [selection, setSelection] = useState({
     category: "INTERVIEW",
     position: "Frontend Developer",
