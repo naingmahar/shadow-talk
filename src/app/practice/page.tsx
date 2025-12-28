@@ -6,6 +6,7 @@ import { db, storage, auth } from '@/lib/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { addDoc, updateDoc, doc, collection } from 'firebase/firestore';
 import { useRecorder } from '@/hooks/useRecorder';
+import { useScript } from '@/context/ScriptContext';
 
 export default function PracticePage() {
   const [text, setText] = useState('');
@@ -20,15 +21,15 @@ export default function PracticePage() {
   const isProcessingRef = useRef(false);
   
   const { isRecording, audioBlob, startRecording, stopRecording } = useRecorder();
+  const { generatedScript } = useScript();
 
   useEffect(() => {
-    const pending = sessionStorage.getItem('shared_script');
-    console.log("Pending Script from localStorage:", pending);
-    if (pending) {
-      setText(pending);
+   
+    if (generatedScript) {
+      setText(generatedScript);
       // localStorage.removeItem('shared_script'); 
     }
-  }, []);
+  }, [generatedScript]);
 
   const handleToggleRecording = async () => {
     if (isProcessingRef.current) return;

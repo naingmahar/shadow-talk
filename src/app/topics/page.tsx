@@ -4,11 +4,13 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Sparkles, ArrowRight, RefreshCw, Layers, Briefcase, Zap, ChevronRight } from 'lucide-react';
 import { SECTOR_DATA } from '@/constants/sectors'; 
+import { useScript } from '@/context/ScriptContext';
 
 export default function TopicsPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-  const [generatedScript, setGeneratedScript] = useState('');
+  const [generatedScript, setGeneratedScriptLocal] = useState('');
+  const { setGeneratedScript } = useScript();
   
   const [sector, setSector] = useState("MOBILE DEVELOPMENT");
   const [selection, setSelection] = useState({
@@ -43,7 +45,8 @@ export default function TopicsPage() {
         body: JSON.stringify({ sector, ...selection }),
       });
       const data = await res.json();
-      setGeneratedScript(data.script);
+      setGeneratedScriptLocal(data.script);
+      setGeneratedScript(data.script)
     } catch (err) {
       console.error(err);
     } finally {
