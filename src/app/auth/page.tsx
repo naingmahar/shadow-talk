@@ -28,7 +28,7 @@ export default function AuthPage() {
       } else {
         await createUserWithEmailAndPassword(auth, email, password);
       }
-      router.push('/topics'); // Redirect after success
+      router.push('/'); // Redirect after success
     } catch (error: any) {
       alert(error.message);
     } finally {
