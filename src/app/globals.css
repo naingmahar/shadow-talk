@@ -1,26 +1,33 @@
+@tailwind utilities;
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground-rgb: 15, 23, 42; /* slate-900 */
+  --background-start-rgb: 248, 250, 252; /* slate-50 */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom button "press" effect for recording */
+.btn-record-active {
+  animation: pulse-red 1.5s infinite;
+}
+
+@keyframes pulse-red {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { transform: scale(0.95); box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* Smooth transitions for navigation links */
+.nav-link {
+  @apply px-4 py-2 rounded-lg transition-all duration-200 text-slate-600 hover:bg-slate-100 hover:text-blue-600 font-medium;
+}
+
+.nav-link-active {
+  @apply bg-blue-50 text-blue-600;
 }
