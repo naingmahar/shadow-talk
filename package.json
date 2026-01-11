@@ -11,6 +11,7 @@
   "dependencies": {
     "@google-cloud/text-to-speech": "^6.4.0",
     "@google/generative-ai": "^0.24.1",
+    "@mazka/react-speech-to-text": "^1.1.0",
     "firebase": "^12.7.0",
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.562.0",
