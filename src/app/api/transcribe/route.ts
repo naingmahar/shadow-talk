@@ -20,18 +20,20 @@ export async function POST(req: NextRequest) {
     });
 
     const prompt = `
-        The user is answering this question: "${question}"
-        
-        TASK:
-        1. Listen to the audio and transcribe it into natural text.
-        2. STRICTLY DO NOT include timestamps (like 00:00 or [00:01]).
-        3. Evaluate the response in 3 parts:
-            - "status": Is the answer "Correct", "Incorrect", or "Incomplete"?
-            - "analysis": Explain why (Grammar, facts, or if they missed part of the question).
-            - "suggestion": Provide a polished, complete version.
-            - "transcript": The clean text of what the user said (No timestamps).
+    The user is answering this question: "${question}"
+    
+    TASK:
+    1. Listen to the audio and transcribe it into natural text.
+    2. STRICTLY DO NOT include timestamps.
+    3. Evaluate the response and return a JSON object with:
+        - "status": "Correct", "Incorrect", or "Incomplete".
+        - "score": A number from 0 to 100 based on accuracy and English quality.
+        - "analysis": Explain why (Grammar, facts, or if they missed part).
+        - "suggestion": Provide a SHORT, one-sentence polished version. 
+       Keep it under 30 to 60 words. Be direct and natural.
+        - "transcript": The clean text of what the user said.
 
-        Return ONLY a JSON object.
+    Return ONLY a JSON object.
     `;
 
     const result = await model.generateContent([

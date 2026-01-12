@@ -1,6 +1,66 @@
+export type FlashcardCategory =
+  | 'rn'
+  | 'frontend'
+  | 'backend'
+  | 'algorithms'
+  | 'leadership'
+  | 'mentoring'
+  | 'appstore'
+  | 'mobile'
+  | 'personal'
+  | 'behavioral'
+  | 'ielts';
+
+export type FlashcardSub =
+  | 'Architecture'
+  | 'Performance'
+  | 'State'
+  | 'Styling'
+  | 'Native'
+  | 'Animations'
+  | 'Navigation'
+  | 'Deployment'
+  | 'Testing'
+  | 'Security'
+  | 'Cooking'
+  | 'Passion'
+  | 'Mentality'
+  | 'Introduction'
+  | 'Hotel Booking'
+  | 'Immigration'
+  | 'Restaurant'
+  | 'Daily Routine'
+  | 'Health'
+  | 'Social'
+  | 'Travel'
+  | 'Future'
+  | 'Shopping'
+  | 'Daily Life'
+  | 'Work/Study'
+  | 'Hometown'
+  | 'Technology'
+  | 'Leisure'
+  | 'Food'
+  | 'Environment'
+  | 'Education'
+  | 'Friends'
+  | 'Art'
+  | 'Weather'
+  | 'Hobby'
+  | 'Sports'
+  | 'Music'
+  | 'Transport'
+  | 'History'
+  | 'Dreams'
+  | 'Animals'
+  | 'Happiness'
+  | 'Culture'
+  | 'Cities'
+  | 'Ambition';
+
 export interface Flashcard {
-  id: number;
-  category: 'rn' | 'frontend' | 'backend' | 'algorithms' | 'leadership' | 'mentoring' | 'appstore' | 'mobile' | 'personal'|'behavioral'|'ielts';
-  sub?: string;
-  question: string;
+  readonly id: number;
+  readonly category: FlashcardCategory;
+  readonly sub?: FlashcardSub;
+  readonly question: string;
 }

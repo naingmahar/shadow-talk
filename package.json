@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "push": "git push origin main & git push vercel main"
   },
   "dependencies": {
     "@google-cloud/text-to-speech": "^6.4.0",

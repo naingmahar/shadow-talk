@@ -243,7 +243,7 @@ export default function TopicsPage() {
                     <button 
                       onClick={() => {
                         sessionStorage.setItem('pending_script', generatedScript);
-                        router.push('/practice');
+                        router.push('/practice/shadow');
                       }}
                       className="w-full bg-slate-900 text-white py-6 rounded-2xl font-black hover:bg-black transition-all flex items-center justify-center gap-2"
                     >

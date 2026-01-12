@@ -120,16 +120,6 @@ export const PROGRAMMER_FLASHCARDS: Flashcard[] = [
 { id: 277, category: "appstore", question: "How do you manage 'App Bundle' (.aab) vs 'APK' and why did Google move to AAB?" },
 { id: 278, category: "appstore", question: "What is 'Data Safety' (Play Store) and 'Privacy Manifest' (App Store)? How do you declare third-party SDK tracking?" },
 
-// --- mobile DEVELOPMENT (RN, KOTLIN, SWIFT) ---
-{ id: 251, category: "mobile", question: "What is the 'React Native Bridge' and how does the New Architecture (TurboModules/Fabric) replace it?" },
-{ id: 252, category: "mobile", question: "Explain the difference between 'val' and 'var' in Kotlin and how they relate to Swift's 'let' and 'var'." },
-{ id: 253, category: "mobile", question: "In Swift, what is the difference between 'Strong', 'Weak', and 'Unowned' references?" },
-{ id: 254, category: "mobile", question: "How do you handle 'FlatList' performance issues when rendering 1,000+ items with complex UI?" },
-{ id: 255, category: "mobile", question: "What are 'Coroutines' in Kotlin and how do they compare to Async/Await in JavaScript?" },
-{ id: 256, category: "mobile", question: "Explain the 'View Lifecycle' in Android (onCreate, onStart, onResume) vs. iOS (viewDidLoad, viewWillAppear)." },
-{ id: 257, category: "mobile", question: "How do you implement 'Native Modules' when a feature isn't available in React Native?" },
-{ id: 258, category: "mobile", question: "What is 'Hermes' engine in React Native and why should you enable it?" },
-
 { id: 201, category: "mentoring", question: "How do you provide constructive feedback to a junior developer whose code quality is consistently low?" },
   { id: 202, category: "mentoring", question: "Describe your process for onboarding a new engineer to your technical stack." },
   { id: 203, category: "mentoring", question: "How do you encourage a mentee to solve a problem themselves instead of giving them the answer?" },
