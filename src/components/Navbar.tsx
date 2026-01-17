@@ -14,7 +14,9 @@ import {
   History,
   Menu,
   X,
-  CreditCard // Using this as the Flashcard icon
+  CreditCard,
+  Map,      // Icon for Learning Path
+  Sparkles  // Icon for Onboarding
 } from 'lucide-react';
 
 export default function Navbar() {
@@ -37,7 +39,7 @@ export default function Navbar() {
             <div className="bg-blue-600 p-1.5 rounded-lg">
               <Zap className="text-white" size={18} fill="currentColor" />
             </div>
-            <span className="text-xl font-black text-slate-900">ShadowTalk</span>
+            <span className="text-xl font-black text-slate-900 tracking-tighter">ShadowTalk</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,8 +47,12 @@ export default function Navbar() {
             {user && (
               <>
                 <NavLink href="/" active={isActive('/')} icon={<LayoutDashboard size={18} />}>Dashboard</NavLink>
+                
+                {/* New Routes */}
+                <NavLink href="/learning-path" active={isActive('/learning-path')} icon={<Map size={18} />}>Learning Path</NavLink>
+                <NavLink href="/onboarding" active={isActive('/onboarding')} icon={<Sparkles size={18} />}>Onboarding</NavLink>
+                
                 <NavLink href="/topics" active={isActive('/topics')} icon={<BookOpen size={18} />}>Topics</NavLink>
-                {/* Separated Shadowing and Flashcards */}
                 <NavLink href="/practice/shadow" active={isActive('/practice/shadow')} icon={<Mic2 size={18} />}>Shadowing</NavLink>
                 <NavLink href="/practice/flashcards" active={isActive('/practice/flashcards')} icon={<CreditCard size={18} />}>Flashcards</NavLink>
                 <NavLink href="/history" active={isActive('/history')} icon={<History size={18} />}>History</NavLink>
@@ -75,11 +81,16 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-white border-b border-slate-100 shadow-xl">
+        <div className="md:hidden absolute top-16 left-0 w-full bg-white border-b border-slate-100 shadow-xl overflow-y-auto max-h-[calc(100vh-64px)]">
           <div className="px-4 py-6 space-y-2">
             {user ? (
               <>
                 <MobileNavLink href="/" onClick={toggleMenu} active={isActive('/')} icon={<LayoutDashboard size={20} />}>Dashboard</MobileNavLink>
+                
+                {/* Mobile New Routes */}
+                <MobileNavLink href="/learning-path" onClick={toggleMenu} active={isActive('/learning-path')} icon={<Map size={20} />}>Learning Path</MobileNavLink>
+                <MobileNavLink href="/onboarding" onClick={toggleMenu} active={isActive('/onboarding')} icon={<Sparkles size={20} />}>Onboarding</MobileNavLink>
+                
                 <MobileNavLink href="/topics" onClick={toggleMenu} active={isActive('/topics')} icon={<BookOpen size={20} />}>Topics</MobileNavLink>
                 <MobileNavLink href="/practice/shadow" onClick={toggleMenu} active={isActive('/practice/shadow')} icon={<Mic2 size={20} />}>Shadowing</MobileNavLink>
                 <MobileNavLink href="/practice/flashcards" onClick={toggleMenu} active={isActive('/practice/flashcards')} icon={<CreditCard size={20} />}>Flashcards</MobileNavLink>
@@ -104,20 +115,31 @@ export default function Navbar() {
 }
 
 /** Helper Components **/
-function NavLink({ href, active, icon, children }: any) {
+function NavLink({ href, active, icon, children }: { href: string; active: boolean; icon: React.ReactNode; children: React.ReactNode }) {
   return (
-    <Link href={href} className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold transition-all ${active ? 'bg-blue-50 text-blue-600' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'}`}>
+    <Link 
+      href={href} 
+      className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold transition-all ${
+        active 
+          ? 'bg-blue-50 text-blue-600' 
+          : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
+      }`}
+    >
       {icon} <span className="whitespace-nowrap">{children}</span>
     </Link>
   );
 }
 
-function MobileNavLink({ href, active, icon, children, onClick }: any) {
+function MobileNavLink({ href, active, icon, children, onClick }: { href: string; active: boolean; icon: React.ReactNode; children: React.ReactNode; onClick: () => void }) {
   return (
     <Link 
       href={href} 
       onClick={onClick}
-      className={`flex items-center gap-4 p-4 rounded-2xl font-bold transition-all ${active ? 'bg-blue-600 text-white shadow-lg shadow-blue-100' : 'text-slate-600 hover:bg-slate-50'}`}
+      className={`flex items-center gap-4 p-4 rounded-2xl font-bold transition-all ${
+        active 
+          ? 'bg-blue-600 text-white shadow-lg shadow-blue-100' 
+          : 'text-slate-600 hover:bg-slate-50'
+      }`}
     >
       {icon} {children}
     </Link>

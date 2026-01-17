@@ -35,7 +35,7 @@ export default function DayDetailPage() {
   const { plan, setPlan, data: surveyData } = useSurveyStore();
   const { user , loading: authLoading} = useAuth();
   
-  const [activePhase, setActivePhase] = useState<Phase>("practice");
+  const [activePhase, setActivePhase] = useState<Phase>("vocab");
   const [content, setContent] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
