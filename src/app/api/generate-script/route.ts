@@ -62,7 +62,7 @@ export async function POST(req: Request) {
     }
 
     // Using gemini-1.5-flash (stable) or your preferred version
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-lite" });
 
     const prompt = `
       ACT AS: A senior professional in the ${sector} industry.
@@ -72,7 +72,7 @@ export async function POST(req: Request) {
       SPECIFIC TOPIC: ${subtopic}
 
       TASK:
-      Generate a 100-150 word professional English monologue for a shadowing exercise.
+      Generate a 60-100 word professional English monologue for a shadowing exercise.
       
       SPEECH RULES (CRITICAL):
       - Use natural, professional spoken English only.
