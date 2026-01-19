@@ -84,7 +84,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
 export async function POST(req: Request) {
   try {
-    const { role, duration, timePerDay, selectedTitles } = await req.json();
+    const { role, duration, timePerDay, selectedTitles,goal } = await req.json();
 
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-lite" });
 
@@ -100,6 +100,7 @@ export async function POST(req: Request) {
       1. Distribute the total days across the selected packages.
       2. Every package must conclude with a "Pre-test" and an "Exam".
       3. For each day, provide ONLY a professional technical title.
+      ${goal == "interview" ? "Self Introduction (myself) must be contain as First Module" : ""} 
       
       Return a JSON object with this exact structure:
       {

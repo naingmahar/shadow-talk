@@ -34,8 +34,24 @@ export default function ShadowDrill({ data, onComplete }: any) {
     window.speechSynthesis.cancel();
     const msg = new SpeechSynthesisUtterance(data.prompt);
     msg.rate = 0.9;
+    msg.lang = "en-US";
+    console.log("Speech started");
+    msg.onstart = () => {
+      console.log("Speech started");
+    };
+    msg.onend = () => {
+      console.log("Speech ended");
+    };
+    msg.onerror = (s) => {
+      console.log("Speech error",s);
+    };
+
     window.speechSynthesis.speak(msg);
   };
+
+  useEffect(() => {
+    return () => window.speechSynthesis.cancel();
+  }, []);
 
   const toggleRecording = () => {
     if (isRecording) {

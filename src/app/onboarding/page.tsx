@@ -263,7 +263,7 @@ export default function OnboardingPage() {
       const response = await fetch("/api/generate-titles", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ role: data.role, challenge: data.levelDescription }),
+        body: JSON.stringify({ role: data.role, challenge: data.levelDescription , goal: data.goal }),
       });
       if (!response.ok) throw new Error();
       const titles = await response.json();

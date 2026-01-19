@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PlayCircle, Volume2, Sparkles, Loader2, CheckCircle, Headphones, ChevronRight } from "lucide-react";
 
 export default function AudioSummary({ data, onComplete }: any) {
@@ -13,15 +13,24 @@ export default function AudioSummary({ data, onComplete }: any) {
   const audioContent = data?.preparation_phase?.audio_reference?.data || "";
 
   const playAudio = () => {
+
+    console.log("Playing audio...",audioContent)
     window.speechSynthesis.cancel();
     const msg = new SpeechSynthesisUtterance(audioContent);
     msg.rate = 0.85; 
+    msg.lang = 'en-US';
     
+    console.log("Speech started");
+
     msg.onstart = () => setIsPlaying(true);
     msg.onend = () => setIsPlaying(false);
     
     window.speechSynthesis.speak(msg);
   };
+
+  useEffect(() => {
+    return () => window.speechSynthesis.cancel();
+  }, []);
 
   const handleCheckSummary = async () => {
     if (userInput.length < 15) return;

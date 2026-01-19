@@ -54,7 +54,7 @@ export async function POST(req: Request) {
 
 
     const prompt = `
-      Act as a Senior React Native Mentor and Linguistic Coach. 
+      Act as a Senior ${role}  Mentor and Linguistic Coach. 
       Generate a deep technical and linguistic training curriculum for:
       
       DAY: ${day}
@@ -119,7 +119,7 @@ export async function POST(req: Request) {
       2. TASK 1 VOICE: This is the original capstone exercise. It should be a broader scenario than the individual vocal drills.
       3. DYNAMIC FORMULAS: In grammar_blueprints, use [+] to separate sentence parts (e.g., [Action] + [Preposition] + [Outcome]).
       4. REAL GRAMMAR: Ensure grammar_blueprints focus on REAL English syntax/sentence construction, not tech stacks.
-      5. SENIORITY: All context, questions, and examples must reflect 2026 React Native standards (JSI, Fabric, TurboModules).
+      5. SENIORITY: All context, questions, and examples must reflect 2026 standards.
       6. FORMAT: Return valid JSON only. No markdown, no backticks.
     `;
 

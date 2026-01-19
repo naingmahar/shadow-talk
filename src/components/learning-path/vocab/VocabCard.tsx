@@ -30,6 +30,9 @@ export default function VocabCard({ item, onVerified }: VocabCardProps) {
     window.speechSynthesis.cancel(); // Clear queue
     const msg = new SpeechSynthesisUtterance(text);
     msg.rate = 0.9;
+    msg.lang = "en-US";
+    msg.pitch = 1;
+
     window.speechSynthesis.speak(msg);
   };
 
